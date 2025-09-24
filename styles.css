@@ -26,27 +26,90 @@ section {
 section h2 {
   margin-bottom: 1rem;
 }
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 1rem;
-  justify-items: center;       /* center items within each grid cell */
-  margin: 0 auto;              /* center the grid container */
+
+/* Comparison Gallery Styles */
+.comparison-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
-.video-card {
+
+.task-row {
+  display: flex;
+  flex-direction: column;
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   overflow: hidden;
-  width: 100%;
-  max-width: 360px;
 }
+
+.task-header {
+  background: #00539C;
+  color: white;
+  padding: 0.75rem;
+  font-weight: bold;
+}
+
+.video-comparison {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.video-card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 450px;
+}
+
 .video-card video {
   width: 100%;
   display: block;
+  border-radius: 4px;
 }
+
 .video-card .caption {
   padding: 0.5rem;
   font-size: 0.9rem;
+  font-weight: bold;
+  text-align: center;
 }
 
+.kq-caption {
+  color: #00539C;
+}
+
+.nmpc-caption {
+  color: #CC3333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .video-comparison {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .video-card {
+    max-width: 100%;
+  }
+
+  .task-header {
+    background: #00539C;
+    color: white;
+    padding: 1rem;
+    font-weight: bold;
+  }
+  
+  .task-header div:first-child {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .task-description {
+    font-weight: normal;
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
