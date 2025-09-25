@@ -85,6 +85,36 @@ section h2 {
   color: #CC3333;
 }
 
+/* Standalone Video Styles */
+.standalone-video {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.standalone-video-card {
+  max-width: 800px;
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.standalone-video-card video {
+  width: 100%;
+  display: block;
+}
+
+.standalone-caption {
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  background: #00539C;
+  color: white;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .video-comparison {
@@ -113,3 +143,8 @@ section h2 {
     font-size: 0.9rem;
     opacity: 0.9;
   }
+  
+  .standalone-video-card {
+    max-width: 100%;
+  }
+}

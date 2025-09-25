@@ -4,6 +4,9 @@
 const kqVideos   = ['Task1_LMPC2.mp4',   'Task2_LMPC2.mp4',   'Task3_LMPC.mp4', 'Task4_LMPC.mp4'];
 const nmpcVideos = ['Task1_NMPC2.mp4', 'Task2_NMPC2.mp4', 'Task3_NMPC.mp4', 'Task4_NMPC.mp4'];
 
+// Standalone video filename
+const standaloneVideo = 'Gazebo.mp4'; // Change this to your actual filename
+
 /**
  * Populate comparison gallery with side-by-side videos
  */
@@ -27,7 +30,6 @@ function populateComparisonGallery() {
       title: "",
       description: "Lemniscate"
     },
-
     { 
       number: 4, 
       title: " ",
@@ -90,5 +92,28 @@ function createVideoCard(filename, captionText, captionClass) {
   return card;
 }
 
-// Initialize the comparison gallery
+/**
+ * Populate standalone video section
+ */
+function populateStandaloneVideo() {
+  const container = document.getElementById('standalone-video');
+  
+  const videoCard = document.createElement('div');
+  videoCard.className = 'standalone-video-card';
+  
+  const videoEl = document.createElement('video');
+  videoEl.controls = true;
+  videoEl.src = `videos/${standaloneVideo}`;
+  videoEl.type = standaloneVideo.endsWith('.webm') ? 'video/webm' : 'video/mp4';
+  
+  const caption = document.createElement('div');
+  caption.className = 'standalone-caption';
+  caption.textContent = 'Additional Demonstration Video';
+  
+  videoCard.append(videoEl, caption);
+  container.appendChild(videoCard);
+}
+
+// Initialize the comparison gallery and standalone video
 populateComparisonGallery();
+populateStandaloneVideo();
